@@ -1,0 +1,386 @@
+{
+  "meta": {
+    "organization": "Sankalptaru Foundation",
+    "dashboard_version": "1.0.0",
+    "data_as_of": "2025-05-26",
+    "generated_at": "2025-05-26T10:00:00Z",
+    "regulatory_versions": {
+      "carbon_emission_factor": "CEA v21.0 (Nov 2025) — 0.710 tCO2/MWh (FY 2024-25)",
+      "ghg_protocol": "Corporate Standard (Revised) + LSR Standard (Jan 30 2026, effective Jan 1 2027)",
+      "ccts": "S.O. 2825(E) Jun 2023 + S.O. 5369(E) Dec 2023; BEE Offset Mechanism V1 (March 2025)",
+      "brsr_core": "SEBI/HO/CFD/CFD-SEC-2/P/CIR/2023/122 (Jul 12 2023) + ISF Standards (Dec 20 2024)",
+      "iucn_red_list": "Version 2024-2 (apiv3.iucnredlist.org)"
+    },
+    "ccts_disclaimer": "Carbon Credit Certificate (CCC) estimates shown are indicative only and are NOT tradable instruments. India Carbon Market (ICM) operationalization expected mid-to-late 2026. Figures based on BEE Offset Mechanism V1 (March 2025). Forest carbon under GHG Protocol LSR V1 not yet covered — 2022 Pilot Draft applied as interim guidance.",
+    "gcp_ccts_disclaimer": "Green Credit Programme (GCP, MoEFCC Oct 12 2023) and CCTS Carbon Credit Certificates are separate instruments and must not be conflated."
+  },
+
+  "partners": [
+    {
+      "id": "P001",
+      "name": "TechCorp India Ltd.",
+      "sector": "IT/Technology",
+      "brsr_applicable": true,
+      "sites": [
+        { "id": "S001", "name": "Pune HQ Campus", "state": "Maharashtra", "district": "Pune" },
+        { "id": "S002", "name": "Bangalore Tech Park", "state": "Karnataka", "district": "Bengaluru Urban" }
+      ]
+    },
+    {
+      "id": "P002",
+      "name": "GreenManufacture Pvt. Ltd.",
+      "sector": "Manufacturing",
+      "brsr_applicable": true,
+      "sites": [
+        { "id": "S003", "name": "Nashik Plant", "state": "Maharashtra", "district": "Nashik" },
+        { "id": "S004", "name": "Aurangabad Factory", "state": "Maharashtra", "district": "Chhatrapati Sambhajinagar" }
+      ]
+    },
+    {
+      "id": "P003",
+      "name": "UrbanRealty Group",
+      "sector": "Real Estate",
+      "brsr_applicable": false,
+      "sites": [
+        { "id": "S005", "name": "Mumbai Township", "state": "Maharashtra", "district": "Thane" }
+      ]
+    },
+    {
+      "id": "P004",
+      "name": "FinServe Capital",
+      "sector": "Banking & Finance",
+      "brsr_applicable": true,
+      "sites": [
+        { "id": "S006", "name": "Delhi NCR Office", "state": "Delhi", "district": "New Delhi" },
+        { "id": "S007", "name": "Hyderabad Branch", "state": "Telangana", "district": "Hyderabad" }
+      ]
+    }
+  ],
+
+  "date_range": {
+    "default_from": "2024-04-01",
+    "default_to": "2025-03-31",
+    "financial_year": "FY 2024-25"
+  },
+
+  "kpi_summary": {
+    "total_trees_planted": 125480,
+    "total_trees_surviving": 108162,
+    "survival_rate_pct": 86.2,
+    "total_carbon_sequestered_tCO2e": 4823.6,
+    "total_water_saved_kl": 218940,
+    "total_livelihoods_supported": 3840,
+    "total_solar_co2_avoided_tCO2e": 612.4,
+    "total_investment_inr": 47500000,
+    "by_partner": {
+      "P001": { "trees": 42000, "carbon_tCO2e": 1620.0, "livelihoods": 1120, "investment_inr": 16000000 },
+      "P002": { "trees": 38500, "carbon_tCO2e": 1480.5, "livelihoods": 980,  "investment_inr": 14500000 },
+      "P003": { "trees": 22000, "carbon_tCO2e": 845.2,  "livelihoods": 680,  "investment_inr": 8500000  },
+      "P004": { "trees": 22980, "carbon_tCO2e": 877.9,  "livelihoods": 1060, "investment_inr": 8500000  }
+    }
+  },
+
+  "modules": {
+
+    "E1_carbon_sequestration": {
+      "methodology": "ICFRE/IPCC species-specific base rates × age curve multiplier × survival rate × permanence risk discount (GHG Protocol LSR 2022 Pilot Draft)",
+      "cea_emission_factor_tCO2_per_MWh": 0.710,
+      "total_tCO2e_sequestered": 4823.6,
+      "by_site": [
+        { "site_id": "S001", "site_name": "Pune HQ Campus",       "trees_planted": 18000, "trees_surviving": 15840, "tCO2e": 612.4 },
+        { "site_id": "S002", "site_name": "Bangalore Tech Park",   "trees_planted": 24000, "trees_surviving": 20880, "tCO2e": 1007.6 },
+        { "site_id": "S003", "site_name": "Nashik Plant",          "trees_planted": 20000, "trees_surviving": 17400, "tCO2e": 838.2 },
+        { "site_id": "S004", "site_name": "Aurangabad Factory",    "trees_planted": 18500, "trees_surviving": 15910, "tCO2e": 642.3 },
+        { "site_id": "S005", "site_name": "Mumbai Township",       "trees_planted": 22000, "trees_surviving": 18700, "tCO2e": 845.2 },
+        { "site_id": "S006", "site_name": "Delhi NCR Office",      "trees_planted": 12000, "trees_surviving": 10200, "tCO2e": 438.9 },
+        { "site_id": "S007", "site_name": "Hyderabad Branch",      "trees_planted": 10980, "trees_surviving":  9232, "tCO2e": 439.0 }
+      ],
+      "by_species": [
+        { "species_common": "Neem",         "species_scientific": "Azadirachta indica",    "iucn_status": "LC", "count": 28400, "base_rate_tCO2e_per_tree_per_yr": 0.045, "age_multiplier": 1.20, "survival_rate": 0.87 },
+        { "species_common": "Peepal",        "species_scientific": "Ficus religiosa",       "iucn_status": "LC", "count": 22100, "base_rate_tCO2e_per_tree_per_yr": 0.052, "age_multiplier": 1.15, "survival_rate": 0.84 },
+        { "species_common": "Mango",         "species_scientific": "Mangifera indica",      "iucn_status": "LC", "count": 19800, "base_rate_tCO2e_per_tree_per_yr": 0.038, "age_multiplier": 1.10, "survival_rate": 0.90 },
+        { "species_common": "Mahua",         "species_scientific": "Madhuca longifolia",    "iucn_status": "LC", "count": 15600, "base_rate_tCO2e_per_tree_per_yr": 0.041, "age_multiplier": 1.12, "survival_rate": 0.85 },
+        { "species_common": "Arjun",         "species_scientific": "Terminalia arjuna",     "iucn_status": "LC", "count": 12300, "base_rate_tCO2e_per_tree_per_yr": 0.049, "age_multiplier": 1.18, "survival_rate": 0.86 },
+        { "species_common": "Amla",          "species_scientific": "Phyllanthus emblica",   "iucn_status": "LC", "count": 10500, "base_rate_tCO2e_per_tree_per_yr": 0.033, "age_multiplier": 1.08, "survival_rate": 0.88 },
+        { "species_common": "Teak",          "species_scientific": "Tectona grandis",       "iucn_status": "LC", "count":  9200, "base_rate_tCO2e_per_tree_per_yr": 0.055, "age_multiplier": 1.22, "survival_rate": 0.82 },
+        { "species_common": "Bamboo",        "species_scientific": "Bambusa bambos",        "iucn_status": "LC", "count":  7580, "base_rate_tCO2e_per_tree_per_yr": 0.028, "age_multiplier": 1.05, "survival_rate": 0.91 }
+      ],
+      "monthly_trend": [
+        { "month": "Apr 2024", "actual_tCO2e": 310.2, "target_tCO2e": 350.0 },
+        { "month": "May 2024", "actual_tCO2e": 328.5, "target_tCO2e": 350.0 },
+        { "month": "Jun 2024", "actual_tCO2e": 392.1, "target_tCO2e": 400.0 },
+        { "month": "Jul 2024", "actual_tCO2e": 445.8, "target_tCO2e": 420.0 },
+        { "month": "Aug 2024", "actual_tCO2e": 438.3, "target_tCO2e": 420.0 },
+        { "month": "Sep 2024", "actual_tCO2e": 412.6, "target_tCO2e": 400.0 },
+        { "month": "Oct 2024", "actual_tCO2e": 380.4, "target_tCO2e": 380.0 },
+        { "month": "Nov 2024", "actual_tCO2e": 362.9, "target_tCO2e": 370.0 },
+        { "month": "Dec 2024", "actual_tCO2e": 344.1, "target_tCO2e": 360.0 },
+        { "month": "Jan 2025", "actual_tCO2e": 400.8, "target_tCO2e": 390.0 },
+        { "month": "Feb 2025", "actual_tCO2e": 388.4, "target_tCO2e": 390.0 },
+        { "month": "Mar 2025", "actual_tCO2e": 419.5, "target_tCO2e": 400.0 }
+      ],
+      "permanence_risk_discount_pct": 3.5,
+      "data_sources": ["ICFRE Species Carbon Tables", "IPCC Guidelines for National GHG Inventories", "GHG Protocol LSR 2022 Pilot Draft"]
+    },
+
+    "E2_biodiversity_index": {
+      "methodology": "Flora IUCN Red List API v3 cross-reference (CR/EN/VU flagging); Fauna sighting logs (birds/mammals/reptiles/insects); Shannon Diversity Index computed per site",
+      "flora_iucn_summary": {
+        "total_species_recorded": 68,
+        "critically_endangered_CR": 2,
+        "endangered_EN": 5,
+        "vulnerable_VU": 9,
+        "near_threatened_NT": 8,
+        "least_concern_LC": 44,
+        "breakdown": [
+          { "status": "CR", "count": 2,  "color": "#C0392B" },
+          { "status": "EN", "count": 5,  "color": "#E67E22" },
+          { "status": "VU", "count": 9,  "color": "#F1C40F" },
+          { "status": "NT", "count": 8,  "color": "#27AE60" },
+          { "status": "LC", "count": 44, "color": "#2ECC71" }
+        ]
+      },
+      "fauna_sightings": {
+        "total_sightings": 1842,
+        "by_category": [
+          { "category": "Birds",    "count": 1124, "species_count": 84 },
+          { "category": "Mammals",  "count": 218,  "species_count": 22 },
+          { "category": "Reptiles", "count": 312,  "species_count": 31 },
+          { "category": "Insects",  "count": 188,  "species_count": 47 }
+        ],
+        "notable_species": [
+          { "name": "Indian Roller",         "category": "Bird",    "iucn_status": "LC", "sightings": 142 },
+          { "name": "Common Leopard",        "category": "Mammal",  "iucn_status": "VU", "sightings": 8   },
+          { "name": "Monitor Lizard",        "category": "Reptile", "iucn_status": "LC", "sightings": 64  },
+          { "name": "Black-naped Monarch",   "category": "Bird",    "iucn_status": "LC", "sightings": 98  },
+          { "name": "Indian Pangolin",       "category": "Mammal",  "iucn_status": "EN", "sightings": 3   }
+        ]
+      },
+      "shannon_diversity_index_by_site": [
+        { "site_id": "S001", "site_name": "Pune HQ Campus",     "SDI": 2.84 },
+        { "site_id": "S002", "site_name": "Bangalore Tech Park", "SDI": 3.12 },
+        { "site_id": "S003", "site_name": "Nashik Plant",        "SDI": 2.97 },
+        { "site_id": "S004", "site_name": "Aurangabad Factory",  "SDI": 2.61 },
+        { "site_id": "S005", "site_name": "Mumbai Township",     "SDI": 2.76 },
+        { "site_id": "S006", "site_name": "Delhi NCR Office",    "SDI": 2.45 },
+        { "site_id": "S007", "site_name": "Hyderabad Branch",    "SDI": 2.58 }
+      ],
+      "phase2_pending": ["Merlin Bird ID API (institutional application required)", "iNaturalist API integration"],
+      "data_sources": ["IUCN Red List API v3 (Version 2024-2)", "Field sighting logs (manual)", "Shannon-Wiener Diversity Index formula"]
+    },
+
+    "E3_water_conservation": {
+      "methodology": "Drip irrigation savings vs 17.5L/sapling/day benchmark; groundwater recharge (CGWB); AQI before/after (CPCB); temperature cooling (IMD/Open-Meteo)",
+      "water_saved_kl_total": 218940,
+      "drip_vs_benchmark_litres_per_sapling_per_day": {
+        "benchmark_flood_irrigation": 17.5,
+        "actual_drip_irrigation": 6.2,
+        "saving_per_sapling_per_day": 11.3
+      },
+      "by_site": [
+        { "site_id": "S001", "site_name": "Pune HQ Campus",     "water_saved_kl": 32450, "aqi_before": 148, "aqi_after": 121, "temp_reduction_C": 0.8 },
+        { "site_id": "S002", "site_name": "Bangalore Tech Park", "water_saved_kl": 46800, "aqi_before": 162, "aqi_after": 128, "temp_reduction_C": 1.1 },
+        { "site_id": "S003", "site_name": "Nashik Plant",        "water_saved_kl": 38200, "aqi_before": 135, "aqi_after": 112, "temp_reduction_C": 0.9 },
+        { "site_id": "S004", "site_name": "Aurangabad Factory",  "water_saved_kl": 35100, "aqi_before": 178, "aqi_after": 141, "temp_reduction_C": 1.0 },
+        { "site_id": "S005", "site_name": "Mumbai Township",     "water_saved_kl": 29800, "aqi_before": 155, "aqi_after": 126, "temp_reduction_C": 0.7 },
+        { "site_id": "S006", "site_name": "Delhi NCR Office",    "water_saved_kl": 22100, "aqi_before": 312, "aqi_after": 268, "temp_reduction_C": 1.4 },
+        { "site_id": "S007", "site_name": "Hyderabad Branch",    "water_saved_kl": 14490, "aqi_before": 142, "aqi_after": 118, "temp_reduction_C": 0.8 }
+      ],
+      "groundwater_recharge_cumec": 0.042,
+      "groundwater_source": "CGWB District Groundwater Brochures",
+      "aqi_standard": "CPCB National Air Quality Index (AQI) — 24hr PM2.5 average",
+      "temperature_source": "IMD / Open-Meteo API (open-meteo.com — no auth required)",
+      "data_sources": ["CPCB AQI API (data.gov.in)", "Open-Meteo API", "CGWB Groundwater Reports", "Field irrigation records"]
+    },
+
+    "E4_solar_carbon_avoidance": {
+      "methodology": "kWh generated × CEA emission factor 0.710 tCO2/MWh (v21.0, Nov 2025, FY 2024-25)",
+      "cea_emission_factor_version": "v21.0 (Nov 2025)",
+      "cea_factor_tCO2_per_MWh": 0.710,
+      "total_kWh_generated": 862535,
+      "total_tCO2_avoided": 612.4,
+      "by_partner": [
+        { "partner_id": "P001", "partner_name": "TechCorp India Ltd.",    "kWh": 312000, "tCO2_avoided": 221.5 },
+        { "partner_id": "P002", "partner_name": "GreenManufacture Pvt.",  "kWh": 284500, "tCO2_avoided": 202.0 },
+        { "partner_id": "P003", "partner_name": "UrbanRealty Group",      "kWh": 142000, "tCO2_avoided": 100.8 },
+        { "partner_id": "P004", "partner_name": "FinServe Capital",       "kWh": 124035, "tCO2_avoided":  88.1 }
+      ],
+      "monthly_trend": [
+        { "month": "Apr 2024", "kWh": 62400, "tCO2_avoided": 44.3 },
+        { "month": "May 2024", "kWh": 78200, "tCO2_avoided": 55.5 },
+        { "month": "Jun 2024", "kWh": 82100, "tCO2_avoided": 58.3 },
+        { "month": "Jul 2024", "kWh": 71400, "tCO2_avoided": 50.7 },
+        { "month": "Aug 2024", "kWh": 69800, "tCO2_avoided": 49.6 },
+        { "month": "Sep 2024", "kWh": 74200, "tCO2_avoided": 52.7 },
+        { "month": "Oct 2024", "kWh": 80500, "tCO2_avoided": 57.2 },
+        { "month": "Nov 2024", "kWh": 68300, "tCO2_avoided": 48.5 },
+        { "month": "Dec 2024", "kWh": 58900, "tCO2_avoided": 41.8 },
+        { "month": "Jan 2025", "kWh": 66400, "tCO2_avoided": 47.2 },
+        { "month": "Feb 2025", "kWh": 71200, "tCO2_avoided": 50.6 },
+        { "month": "Mar 2025", "kWh": 79135, "tCO2_avoided": 56.2 }
+      ],
+      "data_sources": ["Partner solar generation meter logs", "CEA Emission Factor v21.0 (Nov 2025)"]
+    },
+
+    "E5_ghg_scope_and_ccts": {
+      "methodology": "GHG Protocol Corporate Standard (Revised). Scope 1 = land carbon removals (E1). Scope 2 = solar avoidance (E4). Scope 3 Cat.15 = corporate investment attribution. CCC estimates per BEE Offset Mechanism V1 (March 2025).",
+      "ghg_breakdown": {
+        "scope_1_tCO2e": 4823.6,
+        "scope_1_description": "Land-based carbon removals from afforestation projects (ref: E1)",
+        "scope_2_tCO2e": 612.4,
+        "scope_2_description": "Market-based: avoided grid emissions from partner solar installations (ref: E4)",
+        "scope_3_cat15_tCO2e": 1240.8,
+        "scope_3_description": "Category 15: Investments — corporate partner CSR attribution (proportional to investment share)"
+      },
+      "total_ghg_impact_tCO2e": 6676.8,
+      "ccts_estimate": {
+        "estimated_cccs": 4823,
+        "ccc_basis": "1 CCC ≈ 1 tCO2e (forest carbon, BEE Offset Mechanism V1, March 2025)",
+        "registry_portal": "beeindia.gov.in/carbon-market.php",
+        "disclaimer": "ESTIMATED ONLY — NOT TRADABLE. ICM operationalization expected mid-to-late 2026. Forest carbon NOT covered under GHG Protocol LSR V1; 2022 Pilot Draft applied as interim guidance.",
+        "tradability": false
+      },
+      "by_partner": [
+        { "partner_id": "P001", "scope_1": 1620.0, "scope_2": 221.5, "scope_3_cat15": 420.8, "total": 2262.3, "ccc_estimate": 1620 },
+        { "partner_id": "P002", "scope_1": 1480.5, "scope_2": 202.0, "scope_3_cat15": 384.2, "total": 2066.7, "ccc_estimate": 1480 },
+        { "partner_id": "P003", "scope_1":  845.2, "scope_2": 100.8, "scope_3_cat15": 224.6, "total": 1170.6, "ccc_estimate":  845 },
+        { "partner_id": "P004", "scope_1":  877.9, "scope_2":  88.1, "scope_3_cat15": 211.2, "total": 1177.2, "ccc_estimate":  877 }
+      ],
+      "data_sources": [
+        "GHG Protocol Corporate Standard (Revised)",
+        "GHG Protocol LSR Standard (Jan 30 2026) + 2022 Pilot Draft (interim)",
+        "BEE Offset Mechanism V1 (March 2025)",
+        "S.O. 2825(E) Jun 2023 + S.O. 5369(E) Dec 2023"
+      ]
+    },
+
+    "S1_employment": {
+      "methodology": "Direct jobs and person-days per BRSR Core KPI framework (SEBI/HO/CFD/CFD-SEC-2/P/CIR/2023/122). Gender breakdown and wages vs state minimum wage.",
+      "total_direct_jobs": 284,
+      "total_person_days": 38420,
+      "gender_breakdown": {
+        "male": 148,
+        "female": 136
+      },
+      "avg_daily_wage_inr": 482,
+      "state_min_wage_reference_inr": 428,
+      "wage_vs_minimum_pct_above": 12.6,
+      "by_role": [
+        { "role": "Field Nursery Workers",    "total": 98,  "male": 44, "female": 54, "avg_wage_inr": 420 },
+        { "role": "Plantation Supervisors",   "total": 42,  "male": 28, "female": 14, "avg_wage_inr": 680 },
+        { "role": "Water / Drip Technicians", "total": 36,  "male": 30, "female":  6, "avg_wage_inr": 590 },
+        { "role": "Biodiversity Monitors",    "total": 28,  "male": 12, "female": 16, "avg_wage_inr": 560 },
+        { "role": "Data & GIS Operators",     "total": 24,  "male": 16, "female":  8, "avg_wage_inr": 720 },
+        { "role": "Community Coordinators",   "total": 56,  "male": 18, "female": 38, "avg_wage_inr": 490 }
+      ],
+      "brsr_kpis": {
+        "total_employees_covered_by_health_insurance_pct": 100,
+        "total_employees_covered_by_pf_pct": 94,
+        "female_leadership_pct": 38
+      },
+      "data_sources": ["Sankalptaru HR records", "State Minimum Wage Notifications (FY 2024-25)", "BRSR Core KPI Framework"]
+    },
+
+    "S2_farmer_livelihood": {
+      "methodology": "Households benefiting from agroforestry + GramYumm marketplace; fodder yield per ICFRE species tables; income cross-referenced with APMC mandi prices",
+      "total_farmer_households": 1842,
+      "total_income_generated_inr": 18420000,
+      "avg_income_per_household_inr": 10000,
+      "gramyumm_gmv_inr": 4280000,
+      "gramyumm_active_sellers": 328,
+      "fodder_yield": {
+        "total_tonnes": 1248.6,
+        "by_species": [
+          { "species": "Mahua (Madhuca longifolia)",  "tonnes": 312.4, "icfre_yield_kg_per_tree_per_yr": 20.0 },
+          { "species": "Mango (Mangifera indica)",    "tonnes": 284.1, "icfre_yield_kg_per_tree_per_yr": 14.3 },
+          { "species": "Amla (Phyllanthus emblica)",  "tonnes": 248.8, "icfre_yield_kg_per_tree_per_yr": 23.7 },
+          { "species": "Neem (Azadirachta indica)",   "tonnes": 196.2, "icfre_yield_kg_per_tree_per_yr": 6.9  },
+          { "species": "Arjun (Terminalia arjuna)",   "tonnes": 127.6, "icfre_yield_kg_per_tree_per_yr": 10.4 },
+          { "species": "Bamboo (Bambusa bambos)",     "tonnes":  79.5, "icfre_yield_kg_per_tree_per_yr": 10.5 }
+        ]
+      },
+      "apmc_mandi_prices": {
+        "reference": "Agmarknet (agmarknet.nic.in) modal prices, FY 2024-25",
+        "mahua_inr_per_quintal": 3200,
+        "amla_inr_per_quintal": 2800,
+        "mango_inr_per_quintal": 2200
+      },
+      "by_state": [
+        { "state": "Maharashtra", "households": 980,  "income_inr": 9800000  },
+        { "state": "Karnataka",   "households": 480,  "income_inr": 4800000  },
+        { "state": "Delhi",       "households": 182,  "income_inr": 1820000  },
+        { "state": "Telangana",   "households": 200,  "income_inr": 2000000  }
+      ],
+      "data_sources": ["Sankalptaru field records", "ICFRE Fodder Yield Tables", "Agmarknet APMC Prices", "GramYumm transaction logs"]
+    },
+
+    "S3_tribal_education": {
+      "methodology": "Students enrolled under Sankalptaru Tribal Education programme per corporate partner; dropout rate vs UDISE+ district baseline; first-generation learner tracking",
+      "total_students": 1284,
+      "first_gen_learners": 612,
+      "first_gen_pct": 47.7,
+      "districts_covered": 18,
+      "states_covered": 6,
+      "avg_dropout_rate_programme_pct": 4.2,
+      "udise_baseline_dropout_rate_pct": 11.8,
+      "improvement_over_baseline_pct": 7.6,
+      "by_education_level": [
+        { "level": "Primary (I–V)",      "total": 328, "first_gen": 186, "dropout_pct": 2.8 },
+        { "level": "Upper Primary (VI–VIII)", "total": 312, "first_gen": 162, "dropout_pct": 3.9 },
+        { "level": "Secondary (IX–X)",   "total": 284, "first_gen": 142, "dropout_pct": 4.8 },
+        { "level": "Sr Secondary (XI–XII)", "total": 218, "first_gen": 84,  "dropout_pct": 5.6 },
+        { "level": "Vocational / ITI",   "total": 142, "first_gen": 38,  "dropout_pct": 3.2 }
+      ],
+      "by_partner": [
+        { "partner_id": "P001", "partner_name": "TechCorp India Ltd.",   "students": 420, "first_gen": 198, "scholarship_inr": 4200000 },
+        { "partner_id": "P002", "partner_name": "GreenManufacture Pvt.", "students": 384, "first_gen": 184, "scholarship_inr": 3840000 },
+        { "partner_id": "P003", "partner_name": "UrbanRealty Group",     "students": 248, "first_gen": 118, "scholarship_inr": 2480000 },
+        { "partner_id": "P004", "partner_name": "FinServe Capital",      "students": 232, "first_gen": 112, "scholarship_inr": 2320000 }
+      ],
+      "data_sources": ["Sankalptaru Education Programme records", "UDISE+ District Report Cards (2023-24)", "Field coordinator reports"]
+    },
+
+    "S4_athlete_scholarship": {
+      "methodology": "Athletes sponsored under Sankalptaru Athlete Programme; competition outcome tracking; career progression milestones",
+      "total_athletes": 428,
+      "total_scholarship_disbursed_inr": 8560000,
+      "avg_scholarship_per_athlete_inr": 20000,
+      "sports_covered": 12,
+      "by_sport": [
+        { "sport": "Athletics (Track & Field)", "athletes": 98  },
+        { "sport": "Boxing",                    "athletes": 64  },
+        { "sport": "Archery",                   "athletes": 58  },
+        { "sport": "Kabaddi",                   "athletes": 52  },
+        { "sport": "Wrestling",                 "athletes": 46  },
+        { "sport": "Football",                  "athletes": 42  },
+        { "sport": "Shooting",                  "athletes": 38  },
+        { "sport": "Others",                    "athletes": 30  }
+      ],
+      "competition_outcomes": {
+        "district_level_medals": 184,
+        "state_level_medals":    86,
+        "national_level_medals": 28,
+        "international_representation": 4
+      },
+      "career_progression": {
+        "pursuing_sport_professionally": 142,
+        "joined_sports_authority_programmes": 38,
+        "employed_in_sports_sector": 24,
+        "pursuing_higher_education": 224
+      },
+      "level_progression_pct": {
+        "district": 100,
+        "state": 46.3,
+        "national": 15.1,
+        "international": 2.2
+      },
+      "by_partner": [
+        { "partner_id": "P001", "athletes": 148, "scholarship_inr": 2960000 },
+        { "partner_id": "P002", "athletes": 112, "scholarship_inr": 2240000 },
+        { "partner_id": "P003", "athletes":  84, "scholarship_inr": 1680000 },
+        { "partner_id": "P004", "athletes":  84, "scholarship_inr": 1680000 }
+      ],
+      "data_sources": ["Sankalptaru Athlete Programme records", "SAI district/state competition results", "Field coordinator reports"]
+    }
+  }
+}
